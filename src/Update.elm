@@ -15,3 +15,6 @@ update message model =
 
         FetchAll (Err error) ->
             ( model, Cmd.none )
+
+        SelectPoll poll ->
+            ( model, Cmd.none )

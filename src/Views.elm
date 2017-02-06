@@ -1,6 +1,7 @@
 module Views exposing (..)
 
 import Html exposing (..)
+import Html.Events exposing (onClick)
 import Models exposing (..)
 import Messages exposing (..)
 
@@ -16,9 +17,8 @@ view model =
 pollTableRowView : Poll -> Html Msg
 pollTableRowView poll =
     tr []
-        [ td [] [ text poll.id ]
-        , td [] [ text poll.title ]
-        , td [] [ text (toString (List.length poll.questions)) ]
+        [ td [ onClick (SelectPoll poll) ] [ text poll.title ]
+        , td [ onClick (SelectPoll poll) ] [ text (toString (List.length poll.questions)) ]
         ]
 
 
@@ -27,8 +27,7 @@ pollTableView polls =
     table []
         [ thead []
             [ tr []
-                [ td [] [ text "id" ]
-                , td [] [ text "title" ]
+                [ td [] [ text "title" ]
                 , td [] [ text "questions" ]
                 ]
             ]
