@@ -1,7 +1,7 @@
 module App exposing (..)
 
 import Html exposing (..)
-import Models exposing (Model, Poll)
+import Models exposing (Model)
 import Messages exposing (..)
 import Actions exposing (fetchAll)
 import Update exposing (update)
