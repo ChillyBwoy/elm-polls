@@ -25,3 +25,10 @@ pollTableView polls =
             ]
         , tbody [] (List.map pollTableRowView polls)
         ]
+
+
+pollView : List Poll -> Html Msg
+pollView polls =
+    div []
+        [ pollTableView polls
+        ]
